@@ -137,5 +137,12 @@ def ROT13():
         print("Finish!")
         print('Answer:', str)
 
-
 ROT13()
+
+def test_ROT13(str):
+  """
+  Функция проверяет функцию шифрования Rot13
+  """
+  assert(rot13(rot13(str)) == str)
+  return rot13(rot13(str)) == str
+
