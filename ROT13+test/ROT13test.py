@@ -1,72 +1,15 @@
 # Практичское задание ROT13
 # Шибаева Мария Дмитриевна|  ИВТ | 2 курс | 1 подгруппа
-# ROT13
-# Разработать программу, реализовывающую алгоритм шифрования ROT13.
-# Программа должна уметь:
-#       считать текстовую строку из файла и из консоли;
-#       закодировать/раскодировать строку и отобразить её на экране;
-#       записать закодированную/раскодированную строку в файл;
 #
-# В программе должен использоваться механизм обработки исключений.
-
-
-def ROT131(string):
-    """
-    Функция шифрования строки по алгоритму rot13
-    return возвращает искомую строку
-    """
-
-    def rot(alfabit):
-        i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.find(alfabit)
-        if i != -1:
-            return 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[i]
-        else:
-            return alfabit
-
-    return "".join(map(rot, string))
-
-
-# ________________________________________________________________________________
-# ПРОВЕРКА
-assert (ROT131(ROT131('jvagre vf pbzvat')) == 'jvagre vf pbzvat')  # winter is coming
-assert (ROT131(ROT131(
-    'Gur dhvpx oebja sbk whzcf bire gur ynml qbt.')) == 'Gur dhvpx oebja sbk whzcf bire gur ynml qbt.')  # The quick brown fox jumps over the lazy dog.
-assert (ROT131(ROT131(
-    'Ubj pna lbh gryy na rkgebireg sebz na vagebireg ng AFN?')) == 'Ubj pna lbh gryy na rkgebireg sebz na vagebireg ng AFN?')  # How can you tell an extrovert from an introvert at NSA?
-
-
-# ________________________________________________________________________________
-
-
-def ROT132(string):
-    """
-    Функция шифрования строки по алгоритму rot13.
-    return возвращает искомую строку
-    """
-
-    def rot(alfabit):
-        i = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'.find(alfabit)
-        if i != -1:
-            return 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'[i]
-        else:
-            return alfabit
-
-    return "".join(map(rot, string))
-
-
-# ________________________________________________________________________________
-# ПРОВЕРКА
-assert (ROT132(ROT132(
-    'How can you tell an extrovert from an introvert at NSA?')) == 'How can you tell an extrovert from an introvert at NSA?')
-# Ubj pna lbh gryy na rkgebireg sebz na vagebireg ng AFN?
-assert (
-ROT132(ROT132('The quick brown fox jumps over the lazy dog.')) == 'The quick brown fox jumps over the lazy dog.')
-# Gur dhvpx oebja sbk whzcf bire gur ynml qbt.
-assert (ROT132(ROT132('winter is coming')) == 'winter is coming')  # jvagre vf pbzvat
-
-
-###########################################################################
-
+# ЧАСТЬ 3
+#
+# Для задания по созданию шифровальщика на основе ROT13 создайте отдельный модуль, в котором бы тестировался функционал шифровальщика.
+#
+# Требования к модулю:
+# Наличие docstring для модуля, в котором бы кратко описывалась его назначение
+# Тестирование проводится с помощью assert, находящихся внутри функции.
+# Тестирование должно быть параметризовано, т.е. вы пишете например, одну функцию например, test_rot13(inp, out), а из основного файла, где находится код ROT13 вызываете её с разными параметрами.
+# Подумайте какие тесты требуется сделать для того, чтобы проверить максимально функциональность работы ROT13.
 
 def ROT13():
     """
@@ -89,10 +32,10 @@ def ROT13():
             s = input('Enter the string: ')
             if x == 3:
                 for item in s:
-                    str = (ROT132(s))  # jvagre vf pbzvat
+                    str = (import __init__ as s)  # jvagre vf pbzvat
             if x == 4:
                 for item in s:
-                    str = (ROT131(s))  # winter is coming
+                    str = (import __init__2 as s)  # winter is coming
 
         ###########################################################################
 
@@ -107,7 +50,7 @@ def ROT13():
                     cont = file.read()
                     result = open("Result.txt", "w")
                     for item in cont:
-                        str += (ROT131(item))  # winter is coming
+                        str += (import __init__ as item)  # winter is coming
                 finally:
                     file.close()
                     result.write(str)
@@ -123,18 +66,14 @@ def ROT13():
                     cont = file.read()
                     result = open("Result.txt", "w")
                     for item in cont:
-                         str += (ROT132(item))  # jvagre vf pbzvat
+                         str += (import __init__2 as item)  # jvagre vf pbzvat
                 finally:
                     file.close()
                     result.write(str)
                     result.close()
 
-        import __init__ROT13test
-
         print("Finish!")
         print('Answer:', str)
-
-
 
 
 ROT13()
