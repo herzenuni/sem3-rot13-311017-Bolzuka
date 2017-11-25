@@ -113,10 +113,6 @@ def ROT13():
                     result.write(str)
                     result.close()
 
-
-
-
-
             if x == 4:
                 str = ''
                 try:
@@ -133,16 +129,14 @@ def ROT13():
                     result.write(str)
                     result.close()
 
+        def test_ROT13(str):
+            """
+            Функция проверяет функцию шифрования Rot13
+            """
+            assert (ROT13(ROT13(str)) == str)
+            return ROT13(ROT13(str)) == str
 
         print("Finish!")
         print('Answer:', str)
 
 ROT13()
-
-def test_ROT13(str):
-  """
-  Функция проверяет функцию шифрования Rot13
-  """
-  assert(rot13(rot13(str)) == str)
-  return rot13(rot13(str)) == str
-
