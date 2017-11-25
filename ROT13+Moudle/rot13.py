@@ -72,12 +72,19 @@ def ROT13():
                     result.write(str)
                     result.close()
 
-        def test_ROT13(s):
+        def test_ROT13(str):
             """
             Функция проверяет функцию шифрования Rot13
             """
-            assert (str.ROT13(str.ROT13(s)) == s)
-            return str.ROT13(str.ROT13(s)) == s
+            assert (ROT13(ROT13(str)) == str)
+            return ROT13(ROT13(str)) == str
+
+        print("Finish!")
+        print('Answer:', str)
+
+
+ROT13()
+
 
         print("Finish!")
         print('Answer:', str)
