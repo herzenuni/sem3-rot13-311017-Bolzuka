@@ -84,10 +84,3 @@ def ROT13():
 
 
 ROT13()
-
-
-        print("Finish!")
-        print('Answer:', str)
-
-
-ROT13()
