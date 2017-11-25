@@ -136,13 +136,6 @@ def ROT13():
             assert (ROT13(ROT13(str)) == str)
             return ROT13(ROT13(str)) == str
 
-        def test_ROT13(s):
-            """
-            Функция проверяет функцию шифрования Rot13
-            """
-            assert (str.ROT13(str.ROT13(s)) == s)
-            return str.ROT13(str.ROT13(s)) == s
-
         print("Finish!")
         print('Answer:', str)
 
